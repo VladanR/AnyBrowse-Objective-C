@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actIndicator;
+
+- (IBAction)stop:(id)sender;
+- (IBAction)refresh:(id)sender;
+- (IBAction)back:(id)sender;
+- (IBAction)forward:(id)sender;
 
 @end
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,82 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl0-Tp-nfl">
+                                <rect key="frame" x="0.0" y="63" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT0-HR-Qyl">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="cKm-Q0-VbN">
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="sf4-eU-XGT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="refresh" id="sWy-p6-v2Y">
+                                        <connections>
+                                            <action selector="refresh:" destination="BYZ-38-t0r" id="oar-8n-epK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="7Z5-e8-C3n"/>
+                                    <barButtonItem systemItem="rewind" id="ESO-3I-g7H">
+                                        <connections>
+                                            <action selector="back:" destination="BYZ-38-t0r" id="Yyb-zS-fvv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="7K7-bz-uIN">
+                                        <connections>
+                                            <action selector="forward:" destination="BYZ-38-t0r" id="1Tl-Yn-W3c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.20571270589999999" green="0.26565349100000002" blue="0.32807976010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZnQ-lI-LoB">
+                                <rect key="frame" x="0.0" y="107" width="414" height="711"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eCP-D6-jal">
+                                <rect key="frame" x="188.66666666666666" y="434.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20571270589999999" green="0.26565349100000002" blue="0.32807976010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nl0-Tp-nfl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Bj-g8-Tz9"/>
+                            <constraint firstItem="nl0-Tp-nfl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1gG-II-dB7"/>
+                            <constraint firstItem="ZnQ-lI-LoB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7WC-XR-rKy"/>
+                            <constraint firstItem="iT0-HR-Qyl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8AU-Fy-ooL"/>
+                            <constraint firstItem="iT0-HR-Qyl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QQj-NV-2bk"/>
+                            <constraint firstItem="ZnQ-lI-LoB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="YFi-l4-nAw"/>
+                            <constraint firstItem="nl0-Tp-nfl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="d4o-vF-OSw"/>
+                            <constraint firstItem="iT0-HR-Qyl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jSC-PB-vwF"/>
+                            <constraint firstItem="eCP-D6-jal" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mza-86-zki"/>
+                            <constraint firstItem="eCP-D6-jal" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="odJ-RQ-vpq"/>
+                            <constraint firstItem="ZnQ-lI-LoB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pvc-3x-yL5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZnQ-lI-LoB" secondAttribute="bottom" constant="44" id="sGk-cx-p2b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="actIndicator" destination="eCP-D6-jal" id="JlZ-hV-yWN"/>
+                        <outlet property="searchBar" destination="nl0-Tp-nfl" id="5H6-ON-dQa"/>
+                        <outlet property="webView" destination="ZnQ-lI-LoB" id="BRU-CA-fdn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
     </scenes>
 </document>

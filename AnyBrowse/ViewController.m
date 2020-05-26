@@ -20,4 +20,15 @@
 }
 
 
+- (IBAction)forward:(id)sender {
+}
+
+- (IBAction)back:(id)sender {
+}
+
+- (IBAction)refresh:(id)sender {
+}
+
+- (IBAction)stop:(id)sender {
+}
 @end
