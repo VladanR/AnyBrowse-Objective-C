@@ -18,6 +18,9 @@
                             <searchBar contentMode="redraw" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl0-Tp-nfl">
                                 <rect key="frame" x="0.0" y="63" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hdd-ha-jfW"/>
+                                </connections>
                             </searchBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT0-HR-Qyl">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
